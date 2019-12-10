@@ -15,7 +15,7 @@ data class Recipe(
     @SerializedName("recipe_id")
     val recipe_id: String = "",
     @SerializedName("image_url")
-    val image_url: String = "",
+    var image_url: String = "",
     @SerializedName("social_rank")
-    val social_rank: Float = 0.0f
+    var social_rank: Float = 0.0f
 ) : Serializable

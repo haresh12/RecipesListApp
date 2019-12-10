@@ -1,18 +1,10 @@
 package com.broadcast.recipeslistapp
 
-import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.view.View
 import android.view.View.*
 import android.widget.FrameLayout
 import androidx.constraintlayout.widget.ConstraintLayout
 import kotlinx.android.synthetic.main.activity_base.*
- import androidx.core.app.ComponentActivity
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-
 
 
 abstract class BaseActivity : AppCompatActivity() {
