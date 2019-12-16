@@ -1,10 +1,7 @@
 package com.broadcast.recipeslistapp.adapter
 
 import android.view.View
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.broadcast.recipeslistapp.*
-import android.widget.TextView
 import com.broadcast.recipeslistapp.com.broadcast.recipeslistapp.adapter.OnRecipeListener
 import com.broadcast.recipeslistapp.databinding.LayoutRecipeListItemBinding
 

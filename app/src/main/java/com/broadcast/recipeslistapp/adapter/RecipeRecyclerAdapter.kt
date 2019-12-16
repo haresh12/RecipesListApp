@@ -5,9 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.broadcast.recipeslistapp.models.Recipe
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import android.net.Uri
 import androidx.databinding.DataBindingUtil
 import com.broadcast.recipeslistapp.R
 import com.broadcast.recipeslistapp.com.broadcast.recipeslistapp.adapter.OnRecipeListener

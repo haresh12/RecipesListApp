@@ -11,14 +11,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 import com.broadcast.recipeslistapp.adapter.RecipeRecyclerAdapter
-import com.broadcast.recipeslistapp.com.broadcast.recipeslistapp.adapter.OnRecipeListener
-import kotlinx.android.synthetic.main.activity_recipe_list.*
+ import com.broadcast.recipeslistapp.com.broadcast.recipeslistapp.adapter.OnRecipeListener
+ import kotlinx.android.synthetic.main.activity_recipe_list.*
 import com.broadcast.recipeslistapp.models.Recipe
 import com.broadcast.recipeslistapp.util.VerticalSpacingItemDecorator
 import com.broadcast.recipeslistapp.viewmodels.RecipeListViewModel
 import androidx.recyclerview.widget.RecyclerView.OnScrollListener as OnScrollListener1
 
-open class RecipeListActivity : BaseActivity(), OnRecipeListener {
+open class RecipeListActivity : BaseActivity(),
+    OnRecipeListener {
 
     private lateinit var layoutManager: LinearLayoutManager
     private val TAG = "RecipeListActivity"
