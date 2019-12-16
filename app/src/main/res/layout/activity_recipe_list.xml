@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f2f2f2"
-    tools:context=".activity.RecipeListActivity">
+    tools:context=".RecipeDemoActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"

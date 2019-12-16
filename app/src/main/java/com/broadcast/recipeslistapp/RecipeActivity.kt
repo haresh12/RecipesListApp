@@ -26,7 +26,7 @@ class RecipeActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(com.broadcast.recipeslistapp.R.layout.activity_recipe)
-
+        showProgressBar(true)
         mRecipeViewModel = ViewModelProvider(this).get(RecipeViewModel::class.java)
         getIncomingIntent()
         subscribeObservers()
@@ -41,7 +41,6 @@ class RecipeActivity : BaseActivity() {
 
     //Observe the recipe list changes from viewModel
     private fun subscribeObservers() {
-        showProgressBar(true)
         mRecipeViewModel.getRecipe().observe(this, Observer<Recipe> {
             if (it != null)
                 setRecipeProperties(it)

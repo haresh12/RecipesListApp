@@ -1,5 +1,7 @@
 package com.broadcast.recipeslistapp.models
 
+import androidx.databinding.BaseObservable
+import androidx.databinding.Bindable
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
@@ -17,5 +19,13 @@ data class Recipe(
     @SerializedName("image_url")
     var image_url: String = "",
     @SerializedName("social_rank")
+    @Bindable
     var social_rank: Float = 0.0f
-) : Serializable
+) : Serializable, BaseObservable() {
+
+    fun setSocialRank(): String {
+        return "${Math.round(social_rank)}"
+    }
+
+}
+

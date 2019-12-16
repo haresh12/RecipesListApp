@@ -1,6 +1,6 @@
 package com.broadcast.recipeslistapp
 
-import android.content.Intent
+ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -9,18 +9,16 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_IDLE
 
-import com.broadcast.recipeslistapp.`interface`.OnRecipeListener
 import com.broadcast.recipeslistapp.adapter.RecipeRecyclerAdapter
+import com.broadcast.recipeslistapp.com.broadcast.recipeslistapp.adapter.OnRecipeListener
 import kotlinx.android.synthetic.main.activity_recipe_list.*
 import com.broadcast.recipeslistapp.models.Recipe
 import com.broadcast.recipeslistapp.util.VerticalSpacingItemDecorator
 import com.broadcast.recipeslistapp.viewmodels.RecipeListViewModel
 import androidx.recyclerview.widget.RecyclerView.OnScrollListener as OnScrollListener1
 
-
-class RecipeListActivity : BaseActivity(), OnRecipeListener {
+open class RecipeListActivity : BaseActivity(), OnRecipeListener {
 
     private lateinit var layoutManager: LinearLayoutManager
     private val TAG = "RecipeListActivity"
@@ -36,7 +34,7 @@ class RecipeListActivity : BaseActivity(), OnRecipeListener {
         initSearchView()
 
         if (!mRecipeListViewModel.isViewingRecipes()) {
-            displaySearchCategories();
+            displaySearchCategories()
         }
 
     }
@@ -83,15 +81,6 @@ class RecipeListActivity : BaseActivity(), OnRecipeListener {
 
     }
 
-    private fun xyz(recipe: MutableList<Recipe>) {
-        if (layoutManager.findLastVisibleItemPosition() == recipe.size - 1) {
-            mRecipeListViewModel.searchNextPage()
-            Log.e("searchNextPage() called", "mRecipeListViewModel")
-        }
-
-    }
-
-
     private fun initSearchView() {
         search_view.setOnQueryTextListener(object :
             androidx.appcompat.widget.SearchView.OnQueryTextListener {
@@ -125,74 +114,6 @@ class RecipeListActivity : BaseActivity(), OnRecipeListener {
         search_view.clearFocus()
 
     }
-
-
-//    private fun testSearchRetrofitRequest() {
-//        val recipeApi = ServiceGenerator.getRecipeApis()
-//        val responseCall: Call<RecipeSearchResponse> = recipeApi.searchRecipe(
-//            "chicken", 1
-//        )
-//        responseCall.enqueue(object : Callback<RecipeSearchResponse> {
-//            override fun onResponse(
-//                call: Call<RecipeSearchResponse>,
-//                response: Response<RecipeSearchResponse>
-//            ) {
-//                if (response.isSuccessful) {
-//                    val recipes: ArrayList<Recipe> = response.body()?.recipes!!
-//                    recipes.forEach {
-//                        Log.d(TAG, "onResponse: $it");
-//                    }
-//                } else {
-//                    try {
-//                        Log.d(TAG, "onResponse: " + response.errorBody().toString());
-//                    } catch (e: IOException) {
-//                        e.printStackTrace();
-//                    }
-//
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<RecipeSearchResponse>, t: Throwable) {
-//                Log.d(TAG, "onResponse: ERROR: " + t.message);
-//            }
-//
-//        })
-//
-//    }
-//
-//    private fun testGetRecipe() {
-//        val recipeApi = ServiceGenerator.getRecipeApis()
-//        val responseCall: Call<RecipeResponse> = recipeApi.getRecipe(
-//            recipe_id = "35382"
-//        )
-//
-//        responseCall.enqueue(object : Callback<RecipeResponse> {
-//            override fun onResponse(
-//                call: Call<RecipeResponse>,
-//                response: Response<RecipeResponse>
-//            ) {
-//                if (response.isSuccessful) {
-//                    val recipe = response.body()!!.recipe
-//                    Log.d(TAG, "onResponse: " + recipe.toString());
-//                } else {
-//                    try {
-//                        Log.d(TAG, "onResponse: " + response.errorBody().toString())
-//                    } catch (e: IOException) {
-//                        e.printStackTrace()
-//                    }
-//
-//                }
-//
-//            }
-//
-//            override fun onFailure(call: Call<RecipeResponse>, t: Throwable) {
-//                Log.d(TAG, "onResponse: ERROR: " + t.message);
-//
-//            }
-//
-//        })
-//
-//    }
 
     private fun displaySearchCategories() {
         Log.d(TAG, "displaySearchCategories: called.")
